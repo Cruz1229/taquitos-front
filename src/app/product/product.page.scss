@@ -1,0 +1,26 @@
+ion-button.confirm {
+    position: absolute;
+    left: 50%;
+    top: 95%;
+    transform: translate(-50%, -95%);
+}
+
+ion-item {
+    margin: 10px 0;
+    padding: 0 15px;
+}
+
+ion-input {
+    margin-top: 5px;
+}
+
+.typeFood {
+    display: flex;
+    gap: 25%;
+    justify-content: center;
+    align-items: center;
+}
+
+ion-card {
+    width: fit-content;
+}

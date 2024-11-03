@@ -1,0 +1,74 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button color="medium" (click)="cancel()">Cancelar</ion-button>
+    </ion-buttons>
+    <ion-title>{{ dataProduct.nombre }}</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="confirm()" [strong]="true">Confirmar</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+  <ion-item>
+    <ion-label>Cantidad:</ion-label>
+    <ion-button (click)="decrement()">-</ion-button>
+    <p>{{ count }}</p>
+    <ion-button (click)="increment()">+</ion-button>
+  </ion-item>
+  <ion-accordion-group>
+    <ion-accordion value="first">
+      <ion-item slot="header">
+        <ion-label>Extras</ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content">
+        <ion-item>
+          <ion-label>Queso</ion-label>
+          <ion-label slot="end">$10.00</ion-label>
+          <ion-checkbox 
+            slot="end"
+            (ionChange)="changeExtra($event, 10, 'QUESO')">
+          </ion-checkbox>
+        </ion-item>
+        <ion-item>
+          <ion-label>Guacamole</ion-label>
+          <ion-label slot="end">$15.00</ion-label>
+          <ion-checkbox slot="end" (ionChange)="changeExtra($event, 15, 'GUACAMOLE')"/>
+        </ion-item>
+        <ion-item>
+          <ion-label>Cebolla</ion-label>
+          <ion-label slot="end">$5.00</ion-label>
+          <ion-checkbox slot="end" (ionChange)="changeExtra($event, 5, 'CEBOLLA')"/>
+        </ion-item>
+        <ion-item>
+          <ion-label>Cilantro</ion-label>
+          <ion-label slot="end">$5.00</ion-label>
+          <ion-checkbox slot="end" (ionChange)="changeExtra($event, 5, 'CILANTRO')"/>
+        </ion-item>
+        <ion-item>
+          <ion-label>Salsa extra</ion-label>
+          <ion-label slot="end">$8.00</ion-label>
+          <ion-checkbox slot="end" (ionChange)="changeExtra($event, 8, 'SALSA_EXTRA')"/>
+        </ion-item>
+      </div>
+    </ion-accordion>
+  </ion-accordion-group>
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <ion-title>
+      <div class="footer">
+        <ion-grid class="ion-no-padding" style="width: 100%;">
+          <ion-row>
+            <ion-col size="7">
+              Subtotal:
+            </ion-col>
+            <ion-col size="5" style="text-align: end;">
+              $ {{subtotal}}.00
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+    </ion-title>
+  </ion-toolbar>
+</ion-footer>

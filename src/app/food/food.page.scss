@@ -1,0 +1,9 @@
+ion-row ion-col:first-child {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+ion-row ion-col:last-child {
+    text-align: end;
+}

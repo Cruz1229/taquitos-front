@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button default-href="home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{producto ? 'Editar producto' : 'Nuevo producto'}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-input label="Nombre" label-placement="floating" fill="outline" [value]="nombre" (ionInput)="handleInputName($event)" required/>
+    </ion-item>
+    <ion-item>
+      <ion-input label="Precio" type="number" label-placement="floating" fill="outline" [value]="precio" (ionInput)="handleInputPrice($event)" required/>
+    </ion-item>
+    <div class="typeFood">
+      <div class="food">
+        <h4 style="text-align: center;">Comida</h4>
+        <ion-card (click)="handleTypeFoodChange(1)" [style]="'background-color: ' + backColorF + ';'">
+          <ion-card-content>
+            <ion-icon name="pizza" size="large" [style]="'color: ' + iconColorF + ';'"/>
+          </ion-card-content>
+        </ion-card>
+      </div>
+      <div class="drink">
+        <h4 style="text-align: center;">Bebida</h4>
+        <ion-card (click)="handleTypeFoodChange(2)" [style]="'background-color: ' + backColorD + ';'">
+          <ion-card-content>
+            <ion-icon name="beer" size="large" [style]="'color: ' + iconColorD + ';'"/>
+          </ion-card-content>
+        </ion-card>
+      </div>
+    </div>
+  </ion-list>
+  <ion-button shape="round" fill="outline" class="confirm" (click)="confirm()">{{producto ? 'Editar producto' : 'Nuevo producto'}}</ion-button>
+</ion-content>

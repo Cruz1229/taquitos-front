@@ -1,0 +1,84 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button default-href="home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Eliminar producto</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-accordion-group>
+    <ion-accordion value="first">
+      <ion-item slot="header" color="light">
+        <ion-label>Comidas</ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content">
+        <ion-list *ngIf="comidas.length == 0">
+          <ng-container *ngFor="let i of [].constructor(10)">
+            <ion-item>
+              <ion-thumbnail slot="start">
+                <ion-skeleton-text [animated]="true"></ion-skeleton-text>
+              </ion-thumbnail>
+              <ion-label style="display: flex; justify-content: space-between;">
+                <p style="width: 45%;">
+                  <ion-skeleton-text [animated]="true"></ion-skeleton-text>
+                </p>
+                <p style="width: 45%;">
+                  <ion-skeleton-text [animated]="true" ></ion-skeleton-text>
+                </p>
+              </ion-label>
+            </ion-item>
+          </ng-container>
+        </ion-list>
+        <ion-list *ngIf="comidas.length > 0">
+          <ng-container *ngFor="let c of comidas">
+            <ion-item>
+              <ion-checkbox labelPlacement="end" (ionChange)="addProduct($event, c.id)">
+                <ion-label>
+                  {{ c.nombre }}
+                </ion-label>
+              </ion-checkbox>
+            </ion-item>
+          </ng-container>
+        </ion-list>
+      </div>
+    </ion-accordion>
+    <ion-accordion value="second">
+      <ion-item slot="header" color="light">
+        <ion-label>Bebidas</ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content">
+        <ion-list *ngIf="bebidas.length == 0">
+          <ng-container *ngFor="let i of [].constructor(10)">
+            <ion-item>
+              <ion-thumbnail slot="start">
+                <ion-skeleton-text [animated]="true"></ion-skeleton-text>
+              </ion-thumbnail>
+              <ion-label style="display: flex; justify-content: space-between;">
+                <p style="width: 45%;">
+                  <ion-skeleton-text [animated]="true"></ion-skeleton-text>
+                </p>
+                <p style="width: 45%;">
+                  <ion-skeleton-text [animated]="true" ></ion-skeleton-text>
+                </p>
+              </ion-label>
+            </ion-item>
+          </ng-container>
+        </ion-list>
+        <ion-list *ngIf="bebidas.length > 0">
+          <ng-container *ngFor="let b of bebidas">
+            <ion-item>
+              <ion-checkbox labelPlacement="end" (ionChange)="addProduct($event, b.id)">
+                <ion-label>
+                  {{ b.nombre }}
+                </ion-label>
+              </ion-checkbox>
+            </ion-item>
+          </ng-container>
+        </ion-list>
+      </div>
+    </ion-accordion>
+  </ion-accordion-group>
+  <ion-button shape="round" fill="outline" class="confirm" expand="block" (click)="confirm()">Eliminar productos</ion-button>
+</ion-content>

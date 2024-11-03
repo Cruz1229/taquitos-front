@@ -1,0 +1,16 @@
+ion-footer ion-title .footer {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    justify-content: center;
+    gap: 20px;
+    padding: 10px 0;
+}
+
+ion-col.center {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 13px;
+}

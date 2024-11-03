@@ -1,20 +1,54 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
+<ion-menu contentId="main-content">
+  <ion-header>
     <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
+      <ion-title>Opciones</ion-title>
     </ion-toolbar>
   </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
-</ion-content>
+  <ion-content class="ion-padding">
+    <ion-list>
+      <ion-item [button]="true" (click)="navigate('product')">
+        <ion-label>Agregar productos</ion-label>
+      </ion-item>
+      <ion-item [button]="true" (click)="navigate('all-products')">
+        <ion-label>Editar productos</ion-label>
+      </ion-item>
+      <ion-item [button]="true" (click)="navigate('all-products-delete')">
+        <ion-label>Eliminar productos</ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+<div class="ion-page" id="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-buttons slot="end">
+        <ion-button (click)="navigate('cart')">
+          <ion-icon name="cart"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-padding">
+    <div class="options">
+      <div class="food">
+        <h4>Comidas</h4>
+        <ion-card (click)="navigate('food')">
+          <ion-card-content>
+            <ion-icon name="pizza" size="large"></ion-icon>
+          </ion-card-content>
+        </ion-card>
+      </div>
+      <div class="drink">
+        <h4>Bebidas</h4>
+        <ion-card (click)="navigate('drink')">
+          <ion-card-content>
+            <ion-icon name="beer" size="large"></ion-icon>
+          </ion-card-content>
+        </ion-card>
+      </div>
+    </div>
+  </ion-content>
+</div>

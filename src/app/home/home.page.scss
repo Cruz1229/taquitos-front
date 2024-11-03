@@ -1,27 +1,21 @@
-#container {
-  text-align: center;
-
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+.options, .drink, .food {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
+.options {
+  height: 100%;
+  gap: 15%;
 }
 
-#container p {
-  font-size: 16px;
-  line-height: 22px;
-
-  color: #8c8c8c;
-
-  margin: 0;
+ion-card {
+  width: fit-content;
+  height: fit-content;
+  border-radius: 10px;
 }
 
-#container a {
-  text-decoration: none;
+ion-icon {
+  color: white;
 }
